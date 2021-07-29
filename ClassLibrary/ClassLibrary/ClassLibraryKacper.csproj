@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cd.cs" />
     <Compile Include="Feature.cs" />
+    <Compile Include="FeatureAbstract.cs" />
     <Compile Include="Features.cs" />
+    <Compile Include="IFeature.cs" />
     <Compile Include="ls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

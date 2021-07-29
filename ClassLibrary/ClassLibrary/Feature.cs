@@ -8,7 +8,7 @@ namespace ClassLibraryKacper
 {
     public class Feature
     {
-        string[] help { get; set; }
+        public string[] help { get; private set; }
         public Feature(string[] help)
         {
             this.help = help;
@@ -16,7 +16,7 @@ namespace ClassLibraryKacper
 
         public void GetHelp()
         {
-            foreach(string line in help)
+            foreach (string line in help)
             {
                 Console.WriteLine(line);
             }
@@ -26,6 +26,11 @@ namespace ClassLibraryKacper
         {
             GetHelp();
             return "";
+        }
+
+        public string TellAbout()
+        {
+            return help[0];
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ClassLibraryKacper
         static Dictionary<string, Feature> features = new Dictionary<string, Feature>();
         public Features()
         {
-            features.Add("ls", new Feature(new string[] { "ls", "ls -l", "ls -la" }));
+            features.Add("ls", new ls(new string[] { "ls", "ls -l", "ls -la" }));
         }
         
         public void GetFeatureHelp(string command)
@@ -32,7 +32,21 @@ namespace ClassLibraryKacper
 
         public void CommandHandler(string command)
         {
-            Console.WriteLine("brak komendy dla " + command);
+            if (!features.ContainsKey(command))
+                Console.WriteLine("brak komendy dla " + command);
+            else
+            {
+                Feature temp;
+                ls ls;
+                features.TryGetValue(command,out temp);
+                if (temp.help.Contains(command))
+                {
+                    ls = (ls)temp;
+                    ls.Handler(command);
+                }
+                else
+                    temp.ToString();
+            }
         }
 
     }
