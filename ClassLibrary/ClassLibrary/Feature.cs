@@ -27,10 +27,5 @@ namespace ClassLibraryKacper
             GetHelp();
             return "";
         }
-
-        public string TellAbout()
-        {
-            return help[0];
-        }
     }
 }

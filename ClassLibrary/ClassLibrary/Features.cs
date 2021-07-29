@@ -32,18 +32,19 @@ namespace ClassLibraryKacper
 
         public void CommandHandler(string command)
         {
-            if (!features.ContainsKey(command))
+            if (!features.ContainsKey(command.Split(' ')[0]))
                 Console.WriteLine("brak komendy dla " + command);
             else
             {
                 Feature temp;
                 ls ls;
-                features.TryGetValue(command,out temp);
+                features.TryGetValue(command.Split(' ')[0], out temp);
                 if (temp.help.Contains(command))
-                {
-                    ls = (ls)temp;
-                    ls.Handler(command);
-                }
+                    if(temp is ls)
+                    {
+                        ls = (ls)temp;
+                        ls.Handler(command);
+                    }
                 else
                     temp.ToString();
             }
