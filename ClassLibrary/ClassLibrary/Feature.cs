@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace ClassLibraryKacper
 {
     class Feature
     {
@@ -20,6 +20,12 @@ namespace ClassLibrary
             {
                 Console.WriteLine(line);
             }
+        }
+
+        public override string ToString()
+        {
+            GetHelp();
+            return "";
         }
     }
 }
