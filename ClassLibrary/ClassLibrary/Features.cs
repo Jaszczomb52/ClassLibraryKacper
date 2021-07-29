@@ -16,7 +16,10 @@ namespace ClassLibraryKacper
         
         public void GetFeatureHelp(string command)
         {
-            Console.WriteLine(features[command]);
+            if (features.ContainsKey(command))
+                Console.WriteLine(features[command]);
+            else
+                Console.WriteLine("Brak komendy");
         }
 
         public void GetHelp()
