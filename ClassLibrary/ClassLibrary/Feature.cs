@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryKacper
 {
-    class Feature
+    public class Feature
     {
         string[] help { get; set; }
         public Feature(string[] help)

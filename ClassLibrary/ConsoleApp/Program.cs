@@ -23,14 +23,15 @@ namespace ConsoleApp
         private static void Start(Features feat)
         {
             string temp = Console.ReadLine();
-            if (temp == "help")
+            if (temp.Trim() == "help")
                 feat.GetHelp();
             else if (temp.Trim() != "help" && temp != null && temp.Trim() != "")
-                if(temp.Split(' ')[1] != null)
+                if (temp.Split(' ')[0] == "help")
                     feat.GetFeatureHelp(temp.Split(' ')[1]);
+                else
+                    feat.CommandHandler(temp);
             else
                 Console.WriteLine("");
-            Console.ReadKey();
         }
     }
 }

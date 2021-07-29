@@ -29,5 +29,11 @@ namespace ClassLibraryKacper
             foreach(string key in temp)
                 Console.WriteLine(key);
         }
+
+        public void CommandHandler(string command)
+        {
+            Console.WriteLine("brak komendy dla " + command);
+        }
+
     }
 }
