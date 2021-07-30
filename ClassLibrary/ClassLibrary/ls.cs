@@ -10,7 +10,7 @@ using ClassLibraryKacper;
 
 namespace ClassLibraryKacper
 {
-    class ls : Feature, IFeature
+    class ls : Feature
     {
         public ls(string[] help):base(help)
         {
@@ -25,7 +25,7 @@ namespace ClassLibraryKacper
                 ShowFilesL();
             else if (command == "ls -la")
                 ShowFilesLa();
-            Console.Write(Path);
+            Console.Write("jesteś tutaj -> " + Path);
         }
 
         private void ShowFiles()
@@ -33,7 +33,8 @@ namespace ClassLibraryKacper
             string[] files = Directory.GetFiles(Path);
             foreach (string file in files)
                 if (!File.GetAttributes(file).HasFlag(FileAttributes.Hidden))
-                    Console.WriteLine(file.Substring(Path.Length+1));
+                    Console.Write(file.Substring(Path.Length+1) + "   ");
+            Console.WriteLine("\n");
         }
 
         private void ShowFilesL()

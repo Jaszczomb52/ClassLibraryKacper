@@ -47,7 +47,9 @@
     <Compile Include="Features.cs" />
     <Compile Include="IFeature.cs" />
     <Compile Include="ls.cs" />
+    <Compile Include="md5sum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sha256sum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

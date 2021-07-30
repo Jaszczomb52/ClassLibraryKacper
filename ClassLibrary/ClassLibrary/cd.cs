@@ -17,7 +17,7 @@ namespace ClassLibraryKacper
         public void Handler(string command)
         {
             ChangePath(command.Substring(2).Trim());
-            Console.Write(Path);
+            Console.Write("jesteś tutaj -> " + Path);
         }
 
         private void ChangePath(string path)
@@ -26,11 +26,36 @@ namespace ClassLibraryKacper
                 Path = Directory.GetParent(Path).ToString();
             else
             {
-                string[] arr = Directory.GetDirectories(Path);
-                foreach (string dir in arr)
-                    if (Path + "\\" + path == dir)
-                      Path = dir;
-                    //Console.WriteLine(dir + "\n" + Path + "\\" + path);
+                try
+                {
+                    string[] arr = Directory.GetDirectories(Path);
+                    bool changed = false;
+                    foreach (string dir in arr)
+                    {
+                        if (Path + "\\" + path == dir)
+                        {
+                            Path = dir;
+                            changed = true;
+                        }
+
+                    }
+                    if (!changed)
+                    {
+                        try
+                        {
+                            if(Directory.Exists(path))
+                            Path = path;
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("zła ścieżka");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("błąd przy pobieraniu ścieżki");
+                }
             }
         }
     }
