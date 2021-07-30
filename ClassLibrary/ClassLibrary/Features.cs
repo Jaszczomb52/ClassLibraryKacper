@@ -13,7 +13,6 @@ namespace ClassLibraryKacper
         
         public Features()
         {
-            
             features.Add("ls", new ls(new string[] { "ls - wyswietlenie plikow", "ls -l - nie dziala", "ls -la - wyswietlenie" +
                 "wszystkich plikow, w tym ukrytych, oraz folderow" }));
             features.Add("cd", new cd(new string[] { "cd - przemieszczanie sie po sciezkach. napisz 'cd ..' aby wyjsc" +
