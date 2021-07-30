@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            
             Features feat = new Features();
             while(true)
             {
@@ -22,6 +24,7 @@ namespace ConsoleApp
 
         private static void Start(Features feat)
         {
+            Console.WriteLine();
             string temp = Console.ReadLine();
             if (temp.Trim() == "help")
                 feat.GetHelp();

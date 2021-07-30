@@ -25,22 +25,23 @@ namespace ClassLibraryKacper
                 ShowFilesL();
             else if (command == "ls -la")
                 ShowFilesLa();
+            Console.Write(Path);
         }
 
         private void ShowFiles()
         {
-            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory());
+            string[] files = Directory.GetFiles(Path);
             foreach (string file in files)
                 if (!File.GetAttributes(file).HasFlag(FileAttributes.Hidden))
-                    Console.WriteLine(file.Substring(Directory.GetCurrentDirectory().Length+1));
+                    Console.WriteLine(file.Substring(Path.Length+1));
         }
 
         private void ShowFilesL()
         {
-            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory());
+            string[] files = Directory.GetFiles(Path);
             foreach (string file in files)
             { 
-                string output = file.Substring(Directory.GetCurrentDirectory().Length + 1);
+                string output = file.Substring(Path.Length + 1);
                 output += File.GetAccessControl(file);
                 Console.WriteLine(output);
             }
@@ -48,9 +49,12 @@ namespace ClassLibraryKacper
         
         private void ShowFilesLa()
         {
-            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory());
+            string[] files = Directory.GetFiles(Path);
             foreach (string file in files)
-                Console.WriteLine(file.Substring(Directory.GetCurrentDirectory().Length + 1));
+                Console.WriteLine(file.Substring(Path.Length + 1));
+            files = Directory.GetDirectories(Path);
+            foreach (string dir in files)
+                Console.WriteLine(dir.Substring(Path.Length + 1));
         }
     }
 }
