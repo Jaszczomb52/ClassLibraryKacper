@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryKacper
+namespace ClassLibrary
 {
-    public class Feature
+    public partial class Feature
     {
         public string Path { get; set; }
         public string[] help { get; private set; }

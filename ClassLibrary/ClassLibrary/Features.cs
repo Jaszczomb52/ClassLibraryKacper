@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryKacper
+namespace ClassLibrary
 {
-    public class Features
+    public partial class Features
     {
         static Dictionary<string, Feature> features = new Dictionary<string, Feature>();
         

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibraryKacper;
 
-namespace ClassLibraryKacper
+namespace ClassLibrary
 {
     class ls : Feature
     {
